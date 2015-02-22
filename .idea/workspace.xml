@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ce8d609-4284-4f2d-9278-4b29c9bce509" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Board.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Solver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.java" afterPath="$PROJECT_DIR$/src/Board.java" />
     </list>
     <ignored path="Puzzle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,37 +35,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Board.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.225" vertical-offset="495" max-vertical-offset="1320">
+              <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
               <folding>
-                <element signature="e#278#279#0" expanded="true" />
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#503#504#0" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#735#736#0" expanded="true" />
-                <element signature="e#806#807#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
-                <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#933#934#0" expanded="true" />
-                <element signature="e#1047#1048#0" expanded="true" />
-                <element signature="e#1074#1075#0" expanded="true" />
+                <element signature="e#249#250#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#374#375#0" expanded="true" />
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#1562#1563#0" expanded="true" />
+                <element signature="e#1589#1590#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1688#1689#0" expanded="true" />
+                <element signature="e#1760#1761#0" expanded="true" />
+                <element signature="e#1787#1788#0" expanded="true" />
+                <element signature="e#1901#1902#0" expanded="true" />
+                <element signature="e#1928#1929#0" expanded="true" />
+                <element signature="e#2057#2058#0" expanded="true" />
+                <element signature="e#2104#2105#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Solver.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Solver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3" vertical-offset="210" max-vertical-offset="810">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
               <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
               <folding>
                 <element signature="e#254#255#0" expanded="true" />
@@ -94,8 +92,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Solver.java" />
+        <option value="$PROJECT_DIR$/src/Board.java" />
       </list>
     </option>
   </component>
@@ -179,6 +177,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stdlib.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -432,12 +434,12 @@
       <created>1424511464708</created>
       <updated>1424511464708</updated>
       <workItem from="1424511469486" duration="68000" />
-      <workItem from="1424593806414" duration="1548000" />
+      <workItem from="1424593806414" duration="3364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1616000" />
+    <option name="totallyTimeSpent" value="3432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="24" width="1313" height="744" extended-state="6" />
@@ -522,34 +524,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding>
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#735#736#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#906#907#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3" vertical-offset="210" max-vertical-offset="810">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
           <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
           <folding>
             <element signature="e#254#255#0" expanded="true" />
@@ -558,6 +535,31 @@
             <element signature="e#400#401#0" expanded="true" />
             <element signature="e#510#511#0" expanded="true" />
             <element signature="e#537#538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.225" vertical-offset="495" max-vertical-offset="1320">
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
+          <folding>
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#1562#1563#0" expanded="true" />
+            <element signature="e#1589#1590#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1787#1788#0" expanded="true" />
+            <element signature="e#1901#1902#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#2057#2058#0" expanded="true" />
+            <element signature="e#2104#2105#0" expanded="true" />
           </folding>
         </state>
       </provider>
