@@ -42,10 +42,7 @@ public class Solver {
             throw new NullPointerException();
         }
 
-//        HashSet<String> hashSet = new HashSet<String>();
-
         node = new Node(initial, null);
-//        hashSet.add(node.getBoard().toString());
 
         Node nodeTwin = new Node(initial.twin(), null);
 
@@ -68,11 +65,6 @@ public class Solver {
             }
             Node minNode = minPQ.delMin();
 
-//            while (hashSet.contains(minNode.getBoard().toString())) {
-//                minNode = minPQ.delMin();
-//            }
-//            hashSet.add(minNode.getBoard().toString());
-
             if (minNode.getBoard().equals(node.getBoard())) {
                 minNode = minPQ.delMin();
             } else if (node.getParent() != null) {
@@ -92,6 +84,10 @@ public class Solver {
             Node minNodeTwin = minPQTwin.delMin();
             if (minNodeTwin.getBoard().equals(nodeTwin.getBoard())) {
                 minNodeTwin = minPQTwin.delMin();
+            } else if (nodeTwin.getParent() != null) {
+                if (minNodeTwin.getBoard().equals(nodeTwin.getParent().getBoard())) {
+                    minNodeTwin = minPQTwin.delMin();
+                }
             }
             nodeTwin = minNodeTwin;
         }
