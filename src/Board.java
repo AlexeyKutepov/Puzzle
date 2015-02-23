@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Stack;
 
 /**
  * Created by Alexey Kutepov on 22.02.15.

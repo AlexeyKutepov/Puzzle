@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashSet;
 
 /**
  * Created by Alexey Kutepov on 22.02.15.
@@ -41,10 +42,17 @@ public class Solver {
             throw new NullPointerException();
         }
 
-        Node node = new Node(initial, null);
+//        HashSet<String> hashSet = new HashSet<String>();
+
+        node = new Node(initial, null);
+//        hashSet.add(node.getBoard().toString());
+
         Node nodeTwin = new Node(initial.twin(), null);
 
         while (!solvable && !solvableTwin) {
+
+            //TODO
+            System.out.println(node.getBoard().toString());
             if (node.getBoard().isGoal()) {
                 solvable = true;
                 break;
@@ -54,23 +62,32 @@ public class Solver {
             }
             MinPQ<Node> minPQ = new MinPQ<Node>(comparator);
 
-
-            Stack boardStack = (Stack) node.getBoard().neighbors();
-            for (Object item : boardStack) {
-                minPQ.insert(new Node((Board)item, node));
+            Iterable<Board> boardStack = node.getBoard().neighbors();
+            for (Board item : boardStack) {
+                minPQ.insert(new Node(item, node));
             }
             Node minNode = minPQ.delMin();
+
+//            while (hashSet.contains(minNode.getBoard().toString())) {
+//                minNode = minPQ.delMin();
+//            }
+//            hashSet.add(minNode.getBoard().toString());
+
             if (minNode.getBoard().equals(node.getBoard())) {
                 minNode = minPQ.delMin();
+            } else if (node.getParent() != null) {
+                if (minNode.getBoard().equals(node.getParent().getBoard())) {
+                    minNode = minPQ.delMin();
+                }
             }
             node = minNode;
             moves++;
 
 
             MinPQ<Node> minPQTwin = new MinPQ<Node>(comparator);
-            Stack boardStackTwin = (Stack) nodeTwin.getBoard().neighbors();
-            for (Object item : boardStackTwin) {
-                minPQTwin.insert(new Node((Board)item, node));
+            Iterable<Board> boardStackTwin = nodeTwin.getBoard().neighbors();
+            for (Board item : boardStackTwin) {
+                minPQTwin.insert(new Node(item, node));
             }
             Node minNodeTwin = minPQTwin.delMin();
             if (minNodeTwin.getBoard().equals(nodeTwin.getBoard())) {
