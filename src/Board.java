@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Created by Alexey Kutepov on 22.02.15.
  */
@@ -7,7 +9,12 @@ public class Board {
     // construct a board from an N-by-N array of blocks
     // (where blocks[i][j] = block in row i, column j)
     public Board(int[][] blocks) {
-        this.board = blocks;
+        board = new int[blocks.length][blocks.length];
+        for (int i = 0; i < blocks.length; i++) {
+            for (int j = 0; j < blocks.length; j++) {
+                board[i][j] = blocks[i][j];
+            }
+        }
     }
 
     // board dimension N
@@ -94,7 +101,62 @@ public class Board {
 
     // all neighboring boards
     public Iterable<Board> neighbors() {
-        return null;
+        int i0 = 0;
+        int j0 = 0;
+        Stack<Board> boardMinPQ = new Stack<Board>();
+        for (int i = 0; i < dimension(); i++) {
+            for (int j = 0; j < dimension(); j++) {
+                if (board[i][j] == 0) {
+                    i0 = i;
+                    j0 = j;
+                    break;
+                }
+            }
+        }
+
+        if (i0 > 0) {
+            int[][] newBoard = copyArray();
+            int buf = newBoard[i0 - 1][j0];
+            newBoard[i0 - 1][j0] = newBoard[i0][j0];
+            newBoard[i0][j0] = buf;
+            boardMinPQ.push(new Board(newBoard));
+        }
+
+        if (i0 < dimension() - 1) {
+            int[][] newBoard = copyArray();
+            int buf = newBoard[i0 + 1][j0];
+            newBoard[i0 + 1][j0] = newBoard[i0][j0];
+            newBoard[i0][j0] = buf;
+            boardMinPQ.push(new Board(newBoard));
+        }
+
+        if (j0 > 0) {
+            int[][] newBoard = copyArray();
+            int buf = newBoard[i0][j0 - 1];
+            newBoard[i0][j0 - 1] = newBoard[i0][j0];
+            newBoard[i0][j0] = buf;
+            boardMinPQ.push(new Board(newBoard));
+        }
+
+        if (j0 < dimension() - 1) {
+            int[][] newBoard = copyArray();
+            int buf = newBoard[i0][j0 + 1];
+            newBoard[i0][j0 + 1] = newBoard[i0][j0];
+            newBoard[i0][j0] = buf;
+            boardMinPQ.push(new Board(newBoard));
+        }
+
+        return boardMinPQ;
+    }
+
+    private int[][] copyArray() {
+        int[][] newBoard = new int[dimension()][dimension()];
+        for (int i = 0; i < dimension(); i++) {
+            for (int j = 0; j < dimension(); j++) {
+                newBoard[i][j] = board[i][j];
+            }
+        }
+        return newBoard;
     }
 
     // string representation of this board (in the output format specified below)
