@@ -12,10 +12,12 @@ public class Solver {
     private class Node {
         private final Board board;
         private final Node parent;
+        private int nodeMoves;
 
-        public Node(Board board, Node parent) {
-            this.board = board;
-            this.parent = parent;
+        public Node(Board inBoard, Node inParent, int inMoves) {
+            this.board = inBoard;
+            this.parent = inParent;
+            this.nodeMoves = inMoves;
         }
 
         public Board getBoard() {
@@ -25,13 +27,17 @@ public class Solver {
         public Node getParent() {
             return parent;
         }
+
+        public int getNodeMoves() {
+            return nodeMoves;
+        }
     }
 
     private static Comparator<Node> comparator = new Comparator<Node>() {
 
         @Override
         public int compare(Node node1, Node node2) {
-            return node1.getBoard().manhattan() - node2.getBoard().manhattan();
+            return (node1.getBoard().manhattan() + node1.getNodeMoves()) - (node2.getBoard().manhattan() + node2.getNodeMoves());
         }
     };
 
@@ -42,9 +48,12 @@ public class Solver {
             throw new NullPointerException();
         }
 
-        node = new Node(initial, null);
+        node = new Node(initial, null, 0);
 
-        Node nodeTwin = new Node(initial.twin(), null);
+        Node nodeTwin = new Node(initial.twin(), null, 0);
+
+        MinPQ<Node> minPQ = new MinPQ<Node>(comparator);
+        MinPQ<Node> minPQTwin = new MinPQ<Node>(comparator);
 
         while (!solvable && !solvableTwin) {
 
@@ -57,38 +66,37 @@ public class Solver {
                 solvableTwin = true;
                 break;
             }
-            MinPQ<Node> minPQ = new MinPQ<Node>(comparator);
 
             Iterable<Board> boardStack = node.getBoard().neighbors();
             for (Board item : boardStack) {
-                minPQ.insert(new Node(item, node));
+                minPQ.insert(new Node(item, node, node.getNodeMoves() + 1));
             }
             Node minNode = minPQ.delMin();
 
             if (minNode.getBoard().equals(node.getBoard())) {
                 minNode = minPQ.delMin();
-            } else if (node.getParent() != null) {
-                if (minNode.getBoard().equals(node.getParent().getBoard())) {
-                    minNode = minPQ.delMin();
-                }
             }
+//            else if (node.getParent() != null) {
+//                if (minNode.getBoard().equals(node.getParent().getBoard())) {
+//                    minNode = minPQ.delMin();
+//                }
+//            }
             node = minNode;
             moves++;
 
-
-            MinPQ<Node> minPQTwin = new MinPQ<Node>(comparator);
             Iterable<Board> boardStackTwin = nodeTwin.getBoard().neighbors();
             for (Board item : boardStackTwin) {
-                minPQTwin.insert(new Node(item, node));
+                minPQTwin.insert(new Node(item, nodeTwin, nodeTwin.getNodeMoves() + 1));
             }
             Node minNodeTwin = minPQTwin.delMin();
             if (minNodeTwin.getBoard().equals(nodeTwin.getBoard())) {
                 minNodeTwin = minPQTwin.delMin();
-            } else if (nodeTwin.getParent() != null) {
+            }
+            /*else if (nodeTwin.getParent() != null) {
                 if (minNodeTwin.getBoard().equals(nodeTwin.getParent().getBoard())) {
                     minNodeTwin = minPQTwin.delMin();
                 }
-            }
+            }*/
             nodeTwin = minNodeTwin;
         }
     }
