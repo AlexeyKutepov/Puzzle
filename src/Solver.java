@@ -43,7 +43,6 @@ public class Solver {
 
     // find a solution to the initial board (using the A* algorithm)
     public Solver(Board initial) {
-        boolean solvableTwin = false;
         if (initial == null) {
             throw new NullPointerException();
         }
@@ -55,17 +54,7 @@ public class Solver {
         MinPQ<Node> minPQ = new MinPQ<Node>(comparator);
         MinPQ<Node> minPQTwin = new MinPQ<Node>(comparator);
 
-        while (!solvable && !solvableTwin) {
-
-            //TODO
-            System.out.println(node.getBoard().toString());
-            if (node.getBoard().isGoal()) {
-                solvable = true;
-                break;
-            } else if (nodeTwin.getBoard().isGoal()) {
-                solvableTwin = true;
-                break;
-            }
+        while (!node.getBoard().isGoal() && !nodeTwin.getBoard().isGoal()) {
 
             Iterable<Board> boardStack = node.getBoard().neighbors();
             for (Board item : boardStack) {
@@ -83,6 +72,9 @@ public class Solver {
 //            }
             node = minNode;
             moves++;
+            if (node.getBoard().isGoal()) {
+                solvable = true;
+            }
 
             Iterable<Board> boardStackTwin = nodeTwin.getBoard().neighbors();
             for (Board item : boardStackTwin) {
