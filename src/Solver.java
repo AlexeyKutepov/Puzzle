@@ -1,9 +1,8 @@
 import java.util.Comparator;
-import java.util.HashSet;
 
 /**
- * Created by Alexey Kutepov on 22.02.15.
- */
+* Created by Alexey Kutepov on 22.02.15.
+*/
 public class Solver {
     private Node node;
     private int moves = 0;
@@ -56,6 +55,7 @@ public class Solver {
 
         while (!node.getBoard().isGoal() && !nodeTwin.getBoard().isGoal()) {
 
+//            System.out.println(node.getBoard().toString());
             Iterable<Board> boardStack = node.getBoard().neighbors();
             for (Board item : boardStack) {
                 minPQ.insert(new Node(item, node, node.getNodeMoves() + 1));
@@ -71,7 +71,7 @@ public class Solver {
 //                }
 //            }
             node = minNode;
-            moves++;
+
             if (node.getBoard().isGoal()) {
                 solvable = true;
             }
@@ -90,7 +90,10 @@ public class Solver {
                 }
             }*/
             nodeTwin = minNodeTwin;
+
+            moves++;
         }
+        moves = node.getNodeMoves();
     }
 
     // is the initial board solvable?
