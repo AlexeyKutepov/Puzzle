@@ -32,7 +32,7 @@ public class Solver {
         }
     }
 
-    private static Comparator<Node> comparator = new Comparator<Node>() {
+    private Comparator<Node> comparator = new Comparator<Node>() {
 
         @Override
         public int compare(Node node1, Node node2) {
