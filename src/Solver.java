@@ -62,7 +62,13 @@ public class Solver {
 //            System.out.println(node.getBoard().toString());
             Iterable<Board> boardStack = node.getBoard().neighbors();
             for (Board item : boardStack) {
+              if (node.getParent() != null) {
+                if (!item.equals(node.getParent().getBoard())) {
+                  minPQ.insert(new Node(item, node, node.getNodeMoves() + 1));
+                }
+              } else {
                 minPQ.insert(new Node(item, node, node.getNodeMoves() + 1));
+              }
             }
             Node minNode = minPQ.delMin();
 
@@ -82,7 +88,13 @@ public class Solver {
 
             Iterable<Board> boardStackTwin = nodeTwin.getBoard().neighbors();
             for (Board item : boardStackTwin) {
+              if (nodeTwin.getParent() != null) {
+                if (!item.equals(nodeTwin.getParent().getBoard())) {
+                  minPQTwin.insert(new Node(item, nodeTwin, nodeTwin.getNodeMoves() + 1));
+                }
+              } else {
                 minPQTwin.insert(new Node(item, nodeTwin, nodeTwin.getNodeMoves() + 1));
+              }
             }
             Node minNodeTwin = minPQTwin.delMin();
             if (minNodeTwin.getBoard().equals(nodeTwin.getBoard())) {
