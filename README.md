@@ -2,12 +2,12 @@
 Algorithms, Part I, Week 4
 
 Submission
-Submission time	Wed-25-Feb 07:46:14
+Submission time	Wed-25-Feb 07:53:07
 Raw Score	92.65 / 100.00
 Feedback	See the Assessment Guide for information on how to read this report.
 Assessment Summary
 Compilation:  PASSED
-Style:        FAILED
+Style:        PASSED
 Findbugs:     No potential bugs found.
 API:          PASSED
 
@@ -20,9 +20,9 @@ Assessment Details
 The following files were submitted:
 ----------------------------------
 total 20K
--rw-r--r-- 1 6.0K Feb 25 15:39 Board.java
--rw-r--r-- 1 5.1K Feb 25 15:39 Solver.java
--rw-r--r-- 1 3.0K Feb 25 15:39 studentSubmission.zip
+-rw-r--r-- 1 6.0K Feb 25 15:46 Board.java
+-rw-r--r-- 1 5.0K Feb 25 15:46 Solver.java
+-rw-r--r-- 1 3.0K Feb 25 15:46 studentSubmission.zip
 
 
 ******************************************************************************
@@ -42,7 +42,6 @@ total 20K
 
 % checkstyle *.java
 *-----------------------------------------------------------
-Solver.java:35:5: Static variable definition in wrong order.
 ================================================================
 
 
@@ -386,22 +385,20 @@ Timing tests use your implementation of Board.java and Solver.java. Maximum allo
                filename   N    seconds    insert()          + delMax()         max PQ size
 ---------------------------------------------------------------------------------------------
 => passed  puzzle20.txt   3     1.11       1508                 896                 613         
-=> passed  puzzle21.txt   3     0.79       5048                2984                2065         
-=> passed  puzzle22.txt   3     0.53       3074                1832                1243         
-=> passed  puzzle23.txt   3     0.90       5365                3190                2176         
-=> passed  puzzle24.txt   3     0.48       3611                2177                1435         
-=> passed  puzzle25.txt   3     1.98      14567                8697                5871         
-=> passed  puzzle26.txt   3     0.58       5290                3190                2101         
-=> passed  puzzle27.txt   3     2.22      14456                8809                5648         
-=> passed  puzzle28.txt   3     2.85      26190               15705               10486         
-=> passed  puzzle29.txt   3     2.68      24551               14808                9744         
-=> passed  puzzle30.txt   3     4.64      42267               25548               16720         
-=> passed  puzzle31.txt   3     4.87      44025               26704               17322         
-Aborting tests: puzzle34.txt took 25.115 seconds to complete.
+=> passed  puzzle21.txt   3     0.84       5048                2984                2065         
+=> passed  puzzle22.txt   3     0.54       3074                1832                1243         
+=> passed  puzzle23.txt   3     0.88       5365                3190                2176         
+=> passed  puzzle24.txt   3     0.47       3611                2177                1435         
+=> passed  puzzle25.txt   3     1.95      14567                8697                5871         
+=> passed  puzzle26.txt   3     0.56       5290                3190                2101         
+=> passed  puzzle27.txt   3     2.17      14456                8809                5648         
+=> passed  puzzle28.txt   3     3.06      26190               15705               10486         
+=> passed  puzzle29.txt   3     2.60      24551               14808                9744         
+=> passed  puzzle30.txt   3     4.49      42267               25548               16720         
+=> passed  puzzle31.txt   3     4.67      44025               26704               17322         
+Aborting tests: puzzle34.txt took 24.841 seconds to complete.
 ==> 12/17 tests passed
 
 Total: 12/17 tests passed!
 
 ================================================================
-
-
