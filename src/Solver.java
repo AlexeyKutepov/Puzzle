@@ -53,6 +53,10 @@ public class Solver {
         MinPQ<Node> minPQ = new MinPQ<Node>(comparator);
         MinPQ<Node> minPQTwin = new MinPQ<Node>(comparator);
 
+        if (node.getBoard().isGoal()) {
+          solvable = true;
+        }
+
         while (!node.getBoard().isGoal() && !nodeTwin.getBoard().isGoal()) {
 
 //            System.out.println(node.getBoard().toString());
