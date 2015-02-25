@@ -2,8 +2,8 @@
 Algorithms, Part I, Week 4
 
 Submission
-Submission time	Wed-25-Feb 06:18:22
-Raw Score	72.59 / 100.00
+Submission time	Wed-25-Feb 07:46:14
+Raw Score	92.65 / 100.00
 Feedback	See the Assessment Guide for information on how to read this report.
 Assessment Summary
 Compilation:  PASSED
@@ -11,18 +11,18 @@ Style:        FAILED
 Findbugs:     No potential bugs found.
 API:          PASSED
 
-Correctness:  26/27 tests passed
+Correctness:  27/27 tests passed
 Memory:       8/8 tests passed
-Timing:       0/17 tests passed
+Timing:       12/17 tests passed
 
-Aggregate score: 72.59% [Correctness: 65%, Memory: 10%, Timing: 25%, Style: 0%]
+Aggregate score: 92.65% [Correctness: 65%, Memory: 10%, Timing: 25%, Style: 0%]
 Assessment Details
 The following files were submitted:
 ----------------------------------
 total 20K
--rw-r--r-- 1 6.0K Feb 25 14:20 Board.java
--rw-r--r-- 1 4.5K Feb 25 14:20 Solver.java
--rw-r--r-- 1 2.9K Feb 25 14:20 studentSubmission.zip
+-rw-r--r-- 1 6.0K Feb 25 15:39 Board.java
+-rw-r--r-- 1 5.1K Feb 25 15:39 Solver.java
+-rw-r--r-- 1 3.0K Feb 25 15:39 studentSubmission.zip
 
 
 ******************************************************************************
@@ -331,29 +331,13 @@ Test 9: Call moves() with file inputs
   *  puzzle26.txt
   *  puzzle27.txt
   *  puzzle28.txt
-     java.lang.OutOfMemoryError: Java heap space
-     Board.to2D(Board.java:108)
-     Board.neighbors(Board.java:133)
-     Solver.<init>(Solver.java:83)
-     TestSolver.testMoves(TestSolver.java:47)
-     TestSolver.test9(TestSolver.java:445)
-     TestSolver.main(TestSolver.java:504)
-
   *  puzzle29.txt
   *  puzzle30.txt
-     java.lang.OutOfMemoryError: Java heap space
-     Board.<init>(Board.java:32)
-     Board.neighbors(Board.java:141)
-     Solver.<init>(Solver.java:83)
-     TestSolver.testMoves(TestSolver.java:47)
-     TestSolver.test9(TestSolver.java:447)
-     TestSolver.main(TestSolver.java:504)
-
   *  puzzle31.txt
-==> FAILED
+==> passed
 
 
-Total: 8/9 tests passed!
+Total: 9/9 tests passed!
 
 ================================================================
 
@@ -401,10 +385,23 @@ Timing tests use your implementation of Board.java and Solver.java. Maximum allo
                                                               delMin()
                filename   N    seconds    insert()          + delMax()         max PQ size
 ---------------------------------------------------------------------------------------------
-=> FAILED  puzzle20.txt   3     1.69       6960   (1.3x)       2574                4387   (2.1x)
-Aborting tests: puzzle21.txt took 21.817 seconds to complete.
-==> 0/17 tests passed
+=> passed  puzzle20.txt   3     1.11       1508                 896                 613         
+=> passed  puzzle21.txt   3     0.79       5048                2984                2065         
+=> passed  puzzle22.txt   3     0.53       3074                1832                1243         
+=> passed  puzzle23.txt   3     0.90       5365                3190                2176         
+=> passed  puzzle24.txt   3     0.48       3611                2177                1435         
+=> passed  puzzle25.txt   3     1.98      14567                8697                5871         
+=> passed  puzzle26.txt   3     0.58       5290                3190                2101         
+=> passed  puzzle27.txt   3     2.22      14456                8809                5648         
+=> passed  puzzle28.txt   3     2.85      26190               15705               10486         
+=> passed  puzzle29.txt   3     2.68      24551               14808                9744         
+=> passed  puzzle30.txt   3     4.64      42267               25548               16720         
+=> passed  puzzle31.txt   3     4.87      44025               26704               17322         
+Aborting tests: puzzle34.txt took 25.115 seconds to complete.
+==> 12/17 tests passed
 
-Total: 0/17 tests passed!
+Total: 12/17 tests passed!
 
 ================================================================
+
+
